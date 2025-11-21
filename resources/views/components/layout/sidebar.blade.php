@@ -111,33 +111,19 @@ block d-xl-none">
                         <div data-i18n="Basic">Tambah Data</div>
                     </a>
                 </li>
-                <li class="menu-header small text-uppercase"><span class="menu-header-
-text">Transaksi</span></li>
-                <!-- Cards -->
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+                <div data-i18n="Authentications">Kategori</div>
+            </a>
+            <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="cards-basic.html" class="menu-link">
-                        <i class="menu-icon tf-icons bx bx-collection"></i>
-                        <div data-i18n="Basic">Daftar Pesanan</div>
+                    <a href="{{ route('category.create')}}" class="menu-link">
+                        <div data-i18n="Basic">Tambah Data</div>
                     </a>
-                </li>
-                <!-- User interface -->
-                <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-box"></i>
-                        <div data-i18n="User interface">Pembayaran</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="ui-accordion.html" class="menu-link">
-                                <div data-i18n="Accordion">Daftar Pembayaran</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="ui-alerts.html" class="menu-link">
-                                <div data-i18n="Alerts">Verifikasi Pembayaran</div>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
+        </li>
 </aside>

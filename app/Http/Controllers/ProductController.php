@@ -11,7 +11,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return view('products.index');
     }
 
     /**
@@ -19,7 +19,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.create');
     }
 
     /**
@@ -32,7 +32,7 @@ class ProductController extends Controller
             'harga' => 'required|numeric',
             'stok' => 'required|numeric',
             'deskripsi' => 'nullable|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
     }
 
@@ -49,7 +49,7 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('products.edit');
     }
 
     /**

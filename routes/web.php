@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 //route dengan mode resources
 Route::resource('/products', ProductController::class);
+Route::resource('/category', CategoryController::class);
 
 Route::get('/', function () {
     return view('home');
