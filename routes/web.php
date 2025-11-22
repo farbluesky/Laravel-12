@@ -6,16 +6,18 @@ use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 //route dengan mode resources
-Route::resource('/products', ProductController::class);
-Route::resource('/category', CategoryController::class);
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::resource('/products', ProductController::class);
+    Route::resource('/category', CategoryController::class);
+});
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 })->name('home');
 
 // Admin
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('home');
 })->middleware(['auth', 'verified', 'admin'])->name('dashboard');
 
 

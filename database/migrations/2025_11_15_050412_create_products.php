@@ -9,12 +9,13 @@ return new class extends Migration {
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kategori_id')->constrained('categories')->onDelete('cascade');
-            $table->string('nama');
-            $table->text('deskripsi')->nullable();
-            $table->decimal('harga', 15, 2);
-            $table->integer('stok')->default(0);
-            $table->string('foto')->nullable();
+            $table->string("foto");
+            $table->string("nama");
+            $table->text("deskripsi");
+            $table->decimal("harga");
+            $table->integer("stok")->default(0);
+            $table->unsignedBigInteger('kategori_id');
+            $table->foreign('kategori_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -24,4 +25,3 @@ return new class extends Migration {
         Schema::dropIfExists('products');
     }
 };
-
