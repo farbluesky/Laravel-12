@@ -7,27 +7,23 @@ use App\Models\Product;
 
 class CartController extends Controller
 {
-   /**
-   * Menampilkan isi keranjang
-   */
    public function index()
    {
       $cart = session()->get('cart', []);
       return view('cart.index', compact('cart'));
    }
 
-   /**
-   * Menambah produk ke keranjang
-   */
    public function add(Product $product)
    {
       $cart = session()->get('cart', []);
       if(isset($cart[$product->id])) {
+         $cart[$product->id]['quantity']++;
+      } else {
          $cart[$product->id] = [
-            "nama" => $product->nama,
-            "quantity" => 1,
-            "harga" => $product->harga,
-            "foto" => $product->foto
+         "nama" => $product->nama,
+         "quantity" => 1,
+         "harga" => $product->harga,
+         "foto" => $product->foto
          ];
       }
       session()->put('cart', $cart);
